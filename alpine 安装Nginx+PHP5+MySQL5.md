@@ -3,7 +3,7 @@
 ## 前言
 alpine 版本3.6
 PHP 版本5.6
-MySQL 在alpine 中实际上用的是MariaDB，这次装的是10.1 对应MySQL 5.6。
+MySQL 在alpine 中实际上用的是MariaDB，这次装的是10.1 对应MySQL 5.6。  
 [alpine 软件包查询](https://pkgs.alpinelinux.org/packages)  
 [MariaDB 和MySQL 版本对应关系](https://mariadb.com/kb/en/library/system-variable-differences-between-mariadb-and-mysql/)  
 约定：以下章节一次性的操作都写在`配置`部分。
