@@ -24,7 +24,6 @@ RUN apk add --no-cache bash curl nginx openrc mysql mysql-client \
     chown -R mysql:mysql /var/lib/mysql &&\
     mysql_install_db --user=mysql --ldata=/var/lib/mysql &&\
     # OPENRC
-    touch /run/openrc/softlevel &&\
     sed -i 's/#rc_sys=""/rc_sys="lxc"/g' /etc/rc.conf &&\
     echo 'rc_provide="loopback net"' >> /etc/rc.conf &&\
     sed -i 's/^#\(rc_logger="YES"\)$/\1/' /etc/rc.conf &&\
@@ -36,6 +35,8 @@ RUN apk add --no-cache bash curl nginx openrc mysql mysql-client \
     echo "alias r='fc -e -'" >> /root/.bashrc &&\
     echo "set -o vi" >> /root/.bashrc &&\
     echo 'rc_provide="loopback net"' >> /etc/rc.conf &&\
+    /sbin/openrc &&\
+    touch /run/openrc/softlevel &&\
     rc-update add nginx default &&\
     rc-update add php-fpm default &&\
     rc-update add mariadb default
