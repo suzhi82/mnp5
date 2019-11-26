@@ -4,13 +4,6 @@ RUN apk add --no-cache bash curl nginx openrc mysql mysql-client \
       php5-ctype php5-curl php5-dom php5-fpm php5-iconv php5-gd \
       php5-json php5-mysqli php5-openssl php5-pdo php5-pdo_sqlite \
       php5-sqlite3 php5-xml php5-xmlreader php5-zlib php5-phar php5-posix &&\
-    # BASH
-    touch /root/.bashrc &&\
-    echo "export PS1='\h:\w\\\$ '" >> /root/.bashrc &&\
-    echo "alias r='fc -e -'" >> /root/.bashrc &&\
-    echo "set -o vi" >> /root/.bashrc &&\
-    echo "cat /etc/motd" >> /root/.bashrc &&\
-    echo "To change MySQL root's password please using mysqladmin -u root password 'newpwd'" > /etc/motd &&\
     # NGINX
     adduser -D -g 'www' www &&\
     mkdir /www &&\
@@ -38,15 +31,19 @@ RUN apk add --no-cache bash curl nginx openrc mysql mysql-client \
     sed -i 's/hostname $opts/# hostname $opts/g' /etc/init.d/hostname &&\
     sed -i 's/mount -t tmpfs/# mount -t tmpfs/g' /lib/rc/sh/init.sh &&\
     sed -i 's/cgroup_add_service /# cgroup_add_service /g' /lib/rc/sh/openrc-run.sh &&\
-    echo "export PS1='\h:\w\\\$ '" > /root/.bashrc &&\
-    echo "alias r='fc -e -'" >> /root/.bashrc &&\
-    echo "set -o vi" >> /root/.bashrc &&\
     echo 'rc_provide="loopback net"' >> /etc/rc.conf &&\
     /sbin/openrc &&\
     touch /run/openrc/softlevel &&\
     rc-update add nginx default &&\
     rc-update add php-fpm default &&\
     rc-update add mariadb default &&\
+    # BASH
+    touch /root/.bashrc &&\
+    echo "export PS1='\h:\w\\\$ '" >> /root/.bashrc &&\
+    echo "alias r='fc -e -'" >> /root/.bashrc &&\
+    echo "set -o vi" >> /root/.bashrc &&\
+    echo "cat /etc/motd" >> /root/.bashrc &&\
+    echo "To change MySQL root's password please using mysqladmin -u root password 'newpwd'" > /etc/motd &&\
     # CLEANUP
     rm -rf /var/cache/apk/* &&\
     rm -rf /tmp/*
