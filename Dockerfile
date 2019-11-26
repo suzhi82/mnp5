@@ -50,5 +50,5 @@ RUN apk add --no-cache bash curl nginx openrc mysql mysql-client \
     # CLEANUP
     rm -rf /var/cache/apk/* &&\
     rm -rf /tmp/*
-
+WORKDIR /root
 ENTRYPOINT ["/sbin/init"]
