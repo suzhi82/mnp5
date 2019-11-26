@@ -5,7 +5,7 @@ RUN apk add --no-cache bash curl nginx openrc mysql mysql-client \
       php5-json php5-mysqli php5-openssl php5-pdo php5-pdo_sqlite \
       php5-sqlite3 php5-xml php5-xmlreader php5-zlib php5-phar php5-posix &&\
     # BASH
-    echo 'echo "Change MySQL root\'s password by using mysqladmin -u root password "newpwd"' >> /root/.bashrc &&\
+    echo 'echo "Change MySQL root password by using mysqladmin -u root password "newpwd"' >> /root/.bashrc &&\
     echo "export PS1='\h:\w\\\$ '" > /root/.bashrc &&\
     echo "alias r='fc -e -'" >> /root/.bashrc &&\
     echo "set -o vi" >> /root/.bashrc &&\
