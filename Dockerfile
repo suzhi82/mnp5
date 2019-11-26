@@ -9,9 +9,6 @@ RUN apk add --no-cache bash curl nginx openrc mysql mysql-client \
     echo "export PS1='\h:\w\\\$ '" >> /root/.bashrc &&\
     echo "alias r='fc -e -'" >> /root/.bashrc &&\
     echo "set -o vi" >> /root/.bashrc &&\
-    echo "set -o vi" >> /root/.bashrc &&\
-    echo "set -o vi" >> /root/.bashrc &&\
-    echo "set -o vi" >> /root/.bashrc &&\
     echo "cat /etc/motd" >> /root/.bashrc &&\
     echo "To change MySQL root's password please using mysqladmin -u root password 'newpwd'" > /etc/motd &&\
     # NGINX
