@@ -14,7 +14,7 @@ docker build --no-cache . -t mnp5
 docker run --name mnp5 -p 8888:80 -d mnp5
 
 # Nginx 默认的站点路径为/www
-docker docker run --name mnp5 -p 8888:80 -v /xxxx/web:/www -d mnp5
+docker run --name mnp5 -p 8888:80 -v /xxxx/web:/www -d mnp5
 ```
 
 ## 验证服务
@@ -30,5 +30,5 @@ docker exec -it mnp5 bash
 ```bash
 docker pull suzhi82/mnp5
 # 或者直接运行
-docker run --name mnp5 -p 8888:80 -d suzhi82/mnp5
+docker run --name mnp5 -p 8888:80 -v /xxxx/web:/www -d suzhi82/mnp5
 ```
