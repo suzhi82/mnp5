@@ -1,3 +1,4 @@
+<a href="/">Back</a><br>
 <?php
 $mysql_conf = array(
   'host'    => '127.0.0.1:3306', 

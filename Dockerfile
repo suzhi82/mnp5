@@ -43,7 +43,10 @@ RUN apk add --no-cache bash curl nginx openrc mysql mysql-client \
     echo "alias r='fc -e -'" >> /root/.bashrc &&\
     echo "set -o vi" >> /root/.bashrc &&\
     echo "cat /etc/motd" >> /root/.bashrc &&\
-    echo "To change MySQL root's password please using mysqladmin -u root password 'newpwd'" > /etc/motd &&\
+    mv /tmp/motd /etc/motd &&\
+    # SET MYSQL ROOT PASSWORD
+    service mariadb start &&\
+    mysqladmin -u root password "root" &&\
     # CLEANUP
     rm -rf /var/cache/apk/* &&\
     rm -rf /tmp/*
