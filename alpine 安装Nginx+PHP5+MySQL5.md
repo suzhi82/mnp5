@@ -434,12 +434,40 @@ docker rm mnp5
 ## Docker 部署
 制作容器镜像并运行测试
 ### Dockerfile
-https://github.com/suzhi82/mnp5
-https://github.com/suzhi82/mnp5/blob/master/Dockerfile
+https://github.com/suzhi82/mnp5  
+https://github.com/suzhi82/mnp5/blob/master/Dockerfile  
 
-### 创建运行验证容器
-启动 --rm
+### 创建运行验证
+#### 创建镜像
+```bash
+# 获取Dockerfile 及相关文件
+git clone https://github.com/suzhi82/mnp5.git
 
+# 创建镜像
+docker build --no-cache . -t mnp5
+```
+
+#### 运行容器
+```bash
+# 运行镜像
+docker run --name mnp5 -p 8888:80 -d mnp5
+```
+
+#### 验证服务
+```bash
+# 进入容器
+docker exec -it mnp5 bash
+# 进入后应该可以看到来自/etc/motd 的提示
+```
+访问`localhost:8888`可看到演示页面。
+
+#### DockerHub
+另一个获取该`Docker`镜像的途径
+```bash
+docker pull suzhi82/mnp5
+# 或者直接运行
+docker run --name mnp5 -p 8888:80 -d suzhi82/mnp5
+```
 
 
 ## 参考文档
