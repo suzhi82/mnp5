@@ -10,7 +10,11 @@ docker build --no-cache . -t mnp5
 
 ## 运行镜像
 ```bash
+# 后台启动即可，默认执行/sbin/init
 docker run --name mnp5 -p 8888:80 -d mnp5
+
+# Nginx 默认的站点路径为/www
+docker docker run --name mnp5 -p 8888:80 -v /xxxx/web:/www -d mnp5
 ```
 
 ## 验证服务
