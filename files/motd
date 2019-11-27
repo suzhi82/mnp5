@@ -1,4 +1,5 @@
-The default port of Nginx is 80, visit 'localhost:80' to see the demo page.
+Welcome back!!!
+The default port of Nginx is 80, sometime 'localhost' can not be resolved, please visit '127.0.0.1:80' to see the demo page.
 The default password of MySQL root is 'root', you can change it by using 'mysqladmin -u root password "newpassword"'.
 To see more detail, please visit 'https://github.com/suzhi82/mnp5'.
-
+Enjoy yourself!!!
