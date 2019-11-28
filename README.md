@@ -1,7 +1,7 @@
 # MNP5 = ALPINE3.6 + MYSQL5.6 + NGINX + PHP5
 
-`Nginx`默认端口：`80`，网站目录：`/www`
-`MySQL`的`root`密码：`root`，连接时请用`127.0.0.1`，有时`localhost`解析不了。
+`Nginx`默认端口：`80`，网站目录：`/www`。  
+`MySQL`的`root`密码：`root`，连接时请用`127.0.0.1`，有时`localhost`解析不了。  
 
 ## 创建镜像
 ```bash
